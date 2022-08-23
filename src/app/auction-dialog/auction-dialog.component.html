@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Add Auction</h1>
+<div mat-dialog-content>
+    <form [formGroup]="auctionForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input formControlName="title" matInput placeholder="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName="description" matInput placeholder="description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Choose Image</mat-label>
+            <div>
+              <mat-toolbar>
+                <input matInput [value]="fileName" />
+                <!-- <button
+                  mat-flat-button
+                  color="primary"
+                  [disabled]="!currentFile"
+                  (click)="upload()">
+                  Upload
+                </button> -->
+              </mat-toolbar>
+              <input
+                type="file"
+                id="fileInput"
+                (change)="selectFile($event)"
+                name="fileInput"
+              />
+            </div>
+          </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" style="margin-left: 10px" (click)="addAuction()">Save</button>
+</div>

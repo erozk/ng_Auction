@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg"  style="background-color: royalblue;">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Auction</a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLoggedIn" (click)="openDialog()">Add Auction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/watchlist" *ngIf="isLoggedIn">Watchlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/auctionswon" *ngIf="isLoggedIn">Won Auctions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/auctionslost" *ngIf="isLoggedIn">Lost Auctions</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <button mat-button  *ngIf="!isLoggedIn" (click)="openLoginDialog()">Sign In</button>
+        <button mat-button  *ngIf="isLoggedIn" (click)="signOut()">Sign Out</button>
+        <button mat-icon-button  routerLink="/">
+          <mat-icon>home</mat-icon>
+        </button> 
+      </form>
+    </div>
+  </div>
+</nav>

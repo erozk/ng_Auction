@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>New Bid</h1>
+<div mat-dialog-content>
+    <form [formGroup]="bidForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Bid Value</mat-label>
+            <input type="number" formControlName="value" matInput placeholder="value">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" style="margin-left: 10px" (click)="newBid()">Save</button>
+</div>
