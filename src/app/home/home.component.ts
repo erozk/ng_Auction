@@ -15,7 +15,6 @@ import { BaseService } from '../services/base/base.service';
   styleUrls: ['./home.component.css']
 })
 
-//export abstract interface implements extends import  in infr instanceof yield
 export class HomeComponent extends BaseComponent implements OnInit {
 
   displayedColumns: string[] = ['title','description', 'currentBidValue', 'imageURL','action'];
